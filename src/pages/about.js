@@ -31,7 +31,7 @@ const about = () => {
               </h2>
               <p className="font-poppinsLight text-xl justify-center">
                 Hey there, I&lsquo;m Tapiwa, a tech enthusiast with a flair for
-                creativity! 🚀 Currently pursuing my Masters in Computer Science
+                creativity! 🚀 Currently, I am pursuing my Masters in Computer Science
                 and juggling my roles as both a developer and student, I&lsquo;m on
                 a mission to become a full-stack wizard 🤓. Over the past 6
                 years, I&lsquo;ve been coding in various languages, from crafting web
@@ -69,13 +69,7 @@ const about = () => {
                 am currently researching and experimenting with Blockchain and
                 Web3.
               </p>
-              <p className="my-4 font-poppinsLight text-xl justify-center">
-                I have worked on React Websites. React Native Mobile
-                Applications and C# Desktop Applications. For the backend I have
-                worked with NodeJS, ExpressJS, MongoDB, Firebase, AWS Amplify
-                and SQL.
-              </p>
-
+          
               <p className="text-lg mt-8 italic font-poppinsLight bg-text text-center relative">
                 <span className="absolute top-0 left-0 transform -translate-x-2/3 -translate-y-1/4 text-5xl text-primary">
                   &ldquo;
