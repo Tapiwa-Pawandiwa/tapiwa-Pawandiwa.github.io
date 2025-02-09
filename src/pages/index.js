@@ -29,14 +29,14 @@ export default function Home() {
         <Layout className="pt-0 md:p-16 sm:pt-8 ">
           <div className="flex items-center justify-between w-full md:flex-col md:flex xl:flex-col">
             <div
-              className="w-1/3  relative lg:!justify-start md:!inline-block sm:!justify-start md:w-full xl:w-full flex-col"
+              className="w-1/3  relative lg:!justify-start md:!inline-block sm:!justify-start md:w-full xl:w-full flex-col mt-10 mb-10"
               onMouseEnter={() => setShowGlitch(true)}
               onMouseLeave={() => setShowGlitch(false)}
             >
               <Image
                 src={profileImage}
                 alt="Tapiwa Profile"
-                className="w-full h-auto self-center md:w-full lg:!px:5 sm:mb-10"
+                className="w-full h-auto self-center md:w-full lg:!px:5 sm:mb-10  "
                 priority={true}
                 sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw, 50vw"
               />
