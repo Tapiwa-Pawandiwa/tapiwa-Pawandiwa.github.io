@@ -50,13 +50,15 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <header className="w-full px-32 py-10 text-3xl z-10 lg:px-16 md:px-12 sm:px-8 font-poppinsLight relative flex items-center justify-between">
+    <header className="w-full fixed top-0 left-0 bg-white s px-32 py-6 text-3xl z-50 lg:px-16 md:px-12 sm:px-8 font-poppinsLight flex items-center justify-between transition-all duration-300">
       <button
-        className=" flex-col justify-center items-center hidden lg:flex"
+        className="flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
       >
         <span
@@ -76,20 +78,18 @@ const NavBar = () => {
         ></span>
       </button>
 
-      {/* DESKTOP */}
+      {/* DESKTOP NAVIGATION */}
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav>
           <CustomLink href="/" title="Home" className="mr-4" />
           <CustomLink href="/projects" title="Projects" className="mx-4" />
         </nav>
 
-        <nav className="flex items-center justify-center flex-wrap ">
+        <nav className="flex items-center justify-center flex-wrap">
           <motion.a
             href="https://www.linkedin.com/in/tapiwa-pawandiwa"
-            target={"_blank"}
-            whileHover={{
-              y: -3,
-            }}
+            target="_blank"
+            whileHover={{ y: -3 }}
             whileTap={{ scale: 1 }}
             className="w-10 mx-3"
           >
@@ -97,10 +97,8 @@ const NavBar = () => {
           </motion.a>
           <motion.a
             href="https://github.com/Tapiwa-Pawandiwa"
-            target={"_blank"}
-            whileHover={{
-              y: -3,
-            }}
+            target="_blank"
+            whileHover={{ y: -3 }}
             whileTap={{ scale: 1 }}
             className="w-10 mx-3"
           >
@@ -108,10 +106,8 @@ const NavBar = () => {
           </motion.a>
           <motion.a
             href="https://twitter.com/tapsydoodle"
-            target={"_blank"}
-            whileHover={{
-              y: -3,
-            }}
+            target="_blank"
+            whileHover={{ y: -3 }}
             whileTap={{ scale: 1 }}
             className="w-10 mx-3"
           >
@@ -120,43 +116,24 @@ const NavBar = () => {
         </nav>
       </div>
 
-      {/* MOBILE */}
-      {isOpen ? (
+      {/* MOBILE MENU */}
+      {isOpen && (
         <motion.div
-        initial={{scale:0, opacity: 0, x: "-50%", y: "-50%"}}
-        animate={{scale:1,opacity:1}}
-        className="min-w-[70vw] flex flex-col fixed justify-between  z-30 items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-bg-gray/90  text-light backdrop-blur-sm rounded-lg py-32
-"
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="min-w-[70vw] flex flex-col fixed justify-between z-30 items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            bg-gray/90 text-light backdrop-blur-sm rounded-lg py-32"
         >
-          <nav className="flex items-center flex-col justify-center mb-2 ">
-            <CustomMobileLink
-              href="/"
-              title="Home"
-              className=""
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href="/about"
-              title="About"
-              className=""
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href="/projects"
-              title="Projects"
-              className=""
-              toggle={handleClick}
-            />
+          <nav className="flex items-center flex-col justify-center mb-2">
+            <CustomMobileLink href="/" title="Home" toggle={handleClick} />
+            <CustomMobileLink href="/projects" title="Projects" toggle={handleClick} />
           </nav>
 
-          <nav className="flex items-center justify-center flex-wrap mt-2 ">
+          <nav className="flex items-center justify-center flex-wrap mt-2">
             <motion.a
               href="https://www.linkedin.com/in/tapiwa-pawandiwa"
-              target={"_blank"}
-              whileHover={{
-                y: -3,
-              }}
+              target="_blank"
+              whileHover={{ y: -3 }}
               whileTap={{ scale: 1 }}
               className="w-10 mx-3 sm:mx-1"
             >
@@ -164,10 +141,8 @@ bg-gray/90  text-light backdrop-blur-sm rounded-lg py-32
             </motion.a>
             <motion.a
               href="https://github.com/Tapiwa-Pawandiwa"
-              target={"_blank"}
-              whileHover={{
-                y: -3,
-              }}
+              target="_blank"
+              whileHover={{ y: -3 }}
               whileTap={{ scale: 1 }}
               className="w-10 mx-3 sm:mx-1"
             >
@@ -175,10 +150,8 @@ bg-gray/90  text-light backdrop-blur-sm rounded-lg py-32
             </motion.a>
             <motion.a
               href="https://twitter.com/tapsydoodle"
-              target={"_blank"}
-              whileHover={{
-                y: -3,
-              }}
+              target="_blank"
+              whileHover={{ y: -3 }}
               whileTap={{ scale: 1 }}
               className="w-10 mx-3 sm:mx-1"
             >
@@ -186,7 +159,7 @@ bg-gray/90  text-light backdrop-blur-sm rounded-lg py-32
             </motion.a>
           </nav>
         </motion.div>
-      ) : null}
+      )}
 
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />

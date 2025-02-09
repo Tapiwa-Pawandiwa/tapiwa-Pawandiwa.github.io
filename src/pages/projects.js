@@ -12,8 +12,18 @@ import guessing from "../../public/images/projects/guessing.png";
 import expense_tracker from "../../public/images/projects/Expense/expense_tracker.png";
 import ProjectsImage from "../../public/images/ProjectsImage.png";
 import TransitionEffect from "@/components/TransitionEffect";
+import ShareWhere from "../../public/images/projects/ShareWhere/ShareWhere.png";
 
 const projectsData = [
+  {
+    title: "ShareWhere",
+    summary:"ShareWhere is a React Native mobile application designed to facilitate peer-to-peer donations within local communities", 
+    fullDescription: "",
+    img: ShareWhere,
+    type: "Mobile App",
+    github: "https://github.com/Tapiwa-Pawandiwa/Sharewear",
+    videoURL: "https://d1ilajauo306z1.cloudfront.net/ShareWhere_trimmed.mp4",
+  },
   {
     title: "Diner",
     summary:
@@ -65,16 +75,25 @@ const projectsData = [
   },
 ];
 
-const FeaturedProject = ({ type, title, summary, img, github }) => {
+const FeaturedProject = ({ type, title, summary, img, github, videoURL }) => {
   return (
     <>
       <article
         className=" mt-20 flex items-center  p-4 shadow-2xl 
-        justify-between rounded-3xl border-double border border-spacing-5 
+        justify-between rounded-3xl 
         relative border-gray lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4
-      bg-light 
+      bg-white 
         "
       >
+            {/* Video */}
+            {videoURL && (
+          <div className="w-[45%] md:w-[70%] mr-10 rounded-lg overflow-hidden shadow-lg mb-4">
+            <video className="w-full rounded-lg" controls autoPlay loop muted>
+              <source src={videoURL} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )}
         <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark xs:-right-2 xs:h-[102%] sm:h-[102%] xs:w-full " />
         <Link
           href={github}
@@ -119,11 +138,10 @@ const FeaturedProject = ({ type, title, summary, img, github }) => {
 const Project = ({ type, title, summary, img, github }) => {
   return (
     <article
-      className="mt-20  w-full flex flex-col items-center bg-light p-6 shadow-2xl 
-    justify-center rounded-2xl border-solid border border-spacing-5 relative border-gray"
+      className="mt-20  w-full flex flex-col items-center bg-white p-6  
+    justify-center rounded-2xl relative"
     >
-      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-gray md:-right-2 md:w-[101%] sm:h-[102%] xs:rounded-[1.5rem]" />
-
+      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-white md:-right-2 md:w-[101%] sm:h-[102%] xs:rounded-[1.5rem]" />
       <Link
         href={github}
         target="_blank"
@@ -165,82 +183,56 @@ const projects = () => {
   return (
     <>
       <Head>
-        <title>Tapiwa&apos;s Portfolio | Projects </title>
+        <title>Tapiwa&apos;s Portfolio | Projects</title>
         <meta name="projects" content="projects by Tapiwa" />
       </Head>
       <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center">
-        <Layout className="pt-16">
-          <AnimatedText
-            text="Projects"
-            className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
-          />
+  <Layout className="pt-16">
+    
+    {/* 🔹 Main Title */}
+    <AnimatedText
+      text="Projects"
+      className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+    />
 
-          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-y-0">
-            <div className="col-span-4 sm:col-span-12 relative">
-              <Image
-                src={ProjectsImage}
-                alt="projects"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 flex flex-col justify-center text-center">
-                <AnimatedText
-                  type="header"
-                  text="Featured Project"
-                  className="text-white lg:!text-5xl md:!text-4xl sm:mb-8 sm:!text-6xl xs:!text-4xl "
-                />
-              </div>
-            </div>
-            <div className="col-span-8 sm:col-span-12 ">
-              <FeaturedProject
-                type={projectsData[0].type}
-                img={projectsData[0].img}
-                title={projectsData[0].title}
-                github={projectsData[0].github}
-                summary={projectsData[0].summary}
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                type={projectsData[1].type}
-                img={projectsData[1].img}
-                title={projectsData[1].title}
-                github={projectsData[1].github}
-                summary={projectsData[1].summary}
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                type={projectsData[2].type}
-                img={projectsData[2].img}
-                title={projectsData[2].title}
-                github={projectsData[2].github}
-                summary={projectsData[2].summary}
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                type={projectsData[3].type}
-                img={projectsData[3].img}
-                title={projectsData[3].title}
-                github={projectsData[3].github}
-                summary={projectsData[3].summary}
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                type={projectsData[4].type}
-                img={projectsData[4].img}
-                title={projectsData[4].title}
-                github={projectsData[4].github}
-                summary={projectsData[4].summary}
-              />
-            </div>
-          </div>
-        </Layout>
-      </main>
+    {/* 🔹 Centered Projects Image for Small Screens / Left for Large */}
+   
+
+    {/* 🔹 Featured Project Title */}
+    <div className="w-full flex justify-center text-center mb-8">
+    <div className="w-full flex sm:justify-center lg:justify-start mb-8">
+      <div className="w-[90%] sm:w-[70%] lg:w-[40%] max-w-[500px]">
+        <Image src={ProjectsImage} alt="projects" className="w-full h-auto" />
+      </div>
+    </div>
+      <AnimatedText
+        type="header"
+        text="Featured Project"
+        className="text-dark lg:!text-5xl md:!text-4xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+      />
+    </div>
+
+    {/* 🔹 Featured Project */}
+    <div className="w-full">
+      <FeaturedProject {...projectsData[0]} />
+    </div>
+
+    {/* 🔹 Regular Projects */}
+    <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-y-0 mt-12">
+      {projectsData.slice(1).map((project, index) => (
+        <div key={index} className="col-span-6 sm:col-span-12">
+          <Project {...project} />
+        </div>
+      ))}
+    </div>
+
+  </Layout>
+</main>
     </>
   );
 };
 
 export default projects;
+
+

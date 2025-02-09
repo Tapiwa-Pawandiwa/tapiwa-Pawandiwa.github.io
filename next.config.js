@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  experimental:{
+    reactRefresh: true,
+  },
   reactStrictMode: true,
   // Add basePath
   basePath: '/tapiwa-pawandiwa.github.io',

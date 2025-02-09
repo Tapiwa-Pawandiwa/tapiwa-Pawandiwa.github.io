@@ -25,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="../../public/favicon.ico"/>
       </Head>
       <TransitionEffect />
-      <main className="flex items-center justify-center text-dark w-full min-h-screen ">
+      <main className="flex bg-white items-center justify-center text-dark w-full min-h-screen ">
         <Layout className="pt-0 md:p-16 sm:pt-8 ">
           <div className="flex items-center justify-between w-full md:flex-col md:flex xl:flex-col">
             <div
@@ -165,7 +165,7 @@ export default function Home() {
               <h2 className="text-center mt-4">- Steve Ballmer</h2>
             </div>
 
-            <div className="col-span-4 flex justify-center items-center bg-light xl:col-span-4 md:col-span-8 md:order-1">
+            <div className="col-span-4 flex justify-center items-center bg-white xl:col-span-4 md:col-span-8 md:order-1">
               <div className=" w-auto relative" />
               <Image
                 src={profileGIF}
