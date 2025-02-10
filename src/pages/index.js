@@ -29,23 +29,25 @@ export default function Home() {
         <Layout className="pt-0 md:p-16 sm:pt-8 ">
           <div className="flex items-center justify-between w-full md:flex-col md:flex xl:flex-col">
             <div
-              className="w-1/3  relative lg:!justify-start md:!inline-block sm:!justify-start md:w-full xl:w-full flex-col mt-10 mb-10"
-              onMouseEnter={() => setShowGlitch(true)}
+        className="relative flex flex-col mt-10 mb-10 sm:w-full md:!inline-block mx-auto"
+        onMouseEnter={() => setShowGlitch(true)}
               onMouseLeave={() => setShowGlitch(false)}
             >
               <Image
                 src={profileImage}
                 alt="Tapiwa Profile"
-                className="w-full h-auto self-center md:w-full lg:!px:5 sm:mb-10  "
+                className="h-auto self-center lg:w-[80%] md:w-[60%] sm:w-[65%] sm:mx-auto sm:mb-2 sm:mt-10"
                 priority={true}
                 sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw, 50vw"
               />
              {showGlitch && (
-                <div className="absolute top-0 left-0 w-full h-full sm:mb-10 overflow-hidden md:!inline-block md:w-full flex-col">
+                <div 
+                className="absolute inset-0 overflow-hidden flex flex-col sm:mx-auto"
+                >
                   <Image
                     src={profileGlitch}
                     alt="Profile Glitch"
-                    className="w-full h-full object-cover transform scale-105  md:w-full sm:!justify-center lg:!px:5 "
+                    className="lg:w-[80%] h-full self-center  md:w-[60%] sm:w-[65%] object-cover transform scale-60 sm:!justify-center lg:!px:5 "
                   />
                 </div>
               )}
@@ -58,7 +60,7 @@ export default function Home() {
               />
               <AnimatedText
                 text="SOFTWARE DEVELOPER"
-                className="!text-2xl !text-left md:!text-center lg:!text-center sm:!text-center "
+                className="!text-2xl !text-left md:!text-center lg:!text-center sm:!text-center text-orange-700 "
                 type="redaction"
               />
               <p className="my-4 font-poppinsLight md:text-lg sm:text-lg bg-text xl:text-2xl">

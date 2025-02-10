@@ -79,9 +79,9 @@ const FeaturedProject = ({ type, title, summary, img, github, videoURL }) => {
   return (
     <>
       <article
-        className=" mt-20 flex items-center  p-4 shadow-2xl 
+        className=" mt-30 flex items-center  p-4 
         justify-between rounded-3xl 
-        relative border-gray lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4
+        relative lg:flex-col lg:p-8  
       bg-white 
         "
       >
@@ -187,8 +187,8 @@ const projects = () => {
         <meta name="projects" content="projects by Tapiwa" />
       </Head>
       <TransitionEffect />
-      <main className="w-full mb-16 flex flex-col items-center justify-center">
-  <Layout className="pt-16">
+      <main className="w-full mb-16 mt-20 flex flex-col items-center justify-center">
+  <Layout className="pt-30">
     
     {/* 🔹 Main Title */}
     <AnimatedText
@@ -209,7 +209,7 @@ const projects = () => {
       <AnimatedText
         type="header"
         text="Featured Project"
-        className="text-dark lg:!text-5xl md:!text-4xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+        className="lg:!text-5xl md:!text-4xl sm:mb-8 sm:!text-6xl xs:!text-4xl text-orange-500"
       />
     </div>
 

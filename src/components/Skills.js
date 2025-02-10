@@ -33,7 +33,7 @@ const Skills = () => {
       
       >Skills</motion.h2>
       
-      <motion.div className="w-full h-screen lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] relative flex items-center justify-center 
+      <motion.div className="w-full h-screen lg:h-[85vh] sm:h-[65vh] xs:h-[55vh] relative flex items-center justify-center 
       rounded-full bg-circularLight lg:bg-circularLightLg md:bg-circularLightMd sm:bg-circularLightSm
       
       ">
@@ -50,6 +50,8 @@ const Skills = () => {
         <Skill name="Figma" x="-16vw" y="27vw" />
         <Skill name="Python" x="25vw" y="-10vw" />
         <Skill name="NextJS" x="0vw" y="10vw" />
+        <Skill name="SQL" x="-30vw" y="5vw" />
+
       </motion.div>
     </>
   );
