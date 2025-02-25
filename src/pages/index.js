@@ -21,7 +21,10 @@ export default function Home() {
     <>
       <Head>
         <title>Tapiwa Pawandiwa Portfolio</title>
-        <meta name="description" content="Porfolio website" />
+        <meta name="description" content="Portfolio website showcasing my work as a software developer." />
+        <meta property="og:title" content="Tapiwa Pawandiwa | Software Developer" />
+        <meta property="og:description" content="Explore my latest projects, skills, and experience in software development." />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="../../public/favicon.ico"/>
       </Head>
       <TransitionEffect />
